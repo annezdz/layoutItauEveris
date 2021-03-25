@@ -5,6 +5,6 @@ import android.media.Image
 
 class MenuItemModel (
     val titulo:String,
-    val image:String
+    val image:Int
 
 )

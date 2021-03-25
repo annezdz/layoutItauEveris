@@ -9,11 +9,11 @@
     app:cardCornerRadius="3dp"> /*borda */
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_cartoes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#333333"
@@ -24,6 +24,22 @@
             tools:text="cartões">
 
         </TextView>
+
+        <TextView
+            android:id="@+id/tv_comp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#333333"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="130dp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="meus comprovantes">
+
+        </TextView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.cardview.widget.CardView>

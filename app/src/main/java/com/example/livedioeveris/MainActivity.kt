@@ -2,48 +2,30 @@ package com.example.livedioeveris
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var rvList: RecyclerView
-    private var adapter = MenuItemAdapter()
+    private lateinit var photoAdapter: PhotoAdapter
+    private var dataList = mutableListOf<MenuItemModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        iniciaViews()
-        setItensLista()
+
+        rvList = findViewById(R.id.rv_list)
+        rvList.layoutManager = GridLayoutManager(applicationContext,2)
+        photoAdapter = PhotoAdapter(applicationContext)
+        rvList.adapter = photoAdapter
+
+        dataList.add(MenuItemModel("cartões",R.drawable.i_cartao))
+
     }
 
-    private fun iniciaViews(){
-        rvList = findViewById(R.id.rv_list) /*localiza o rv_list criando na activitu_main*/
-        rvList.adapter = adapter
-        rvList.layoutManager = GridLayoutManager(this,2)
-    }
 
-    /* lista fake para demosntração */
-    private fun setItensLista(){
-        adapter.setItensList(
-            arrayListOf(
-                MenuItemModel(
-                    "cartoes",
-                   "img.jpg"
-                ),
-                MenuItemModel(
-                    "comprovantes",
-                    "img1.jpg"
-                ),
-                MenuItemModel(
-                    "investimentos",
-                    "img2.jpg"
-                ),
-                MenuItemModel(
-                    "portabilidade",
-                    "img3.jpg"
-                )
-            )
-        )
 
     }
 }
